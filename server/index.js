@@ -38,6 +38,13 @@ app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 
+/* SERVER WORKING MESSAGE */
+const PORT = process.env.PORT || 6001;
+app.get("/",(req,res)=>{
+    res.send("Yupp!!! ITS WORKING");
+})
+
+
 /* FILE STORAGE */
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -68,7 +75,7 @@ app.use("/posts", postRoutes);
 
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 6001;
+
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
