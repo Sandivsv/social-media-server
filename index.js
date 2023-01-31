@@ -39,7 +39,7 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 
 /* SERVER WORKING MESSAGE */
-const PORT = process.env.PORT || 6001;
+const PORT = process.env.PORT;
 app.get("/",(req,res)=>{
     res.send("Yupp!!! ITS WORKING");
 })
